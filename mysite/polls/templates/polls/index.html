@@ -1,0 +1,22 @@
+<!--
+B.S.D.
+Created on Sun May 10 20:40:55 2020
+@author: Sara Ben Shabbat
+-->
+
+{% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            <li>
+                <a href="{% url 'polls.detail' question.id %}"> {{ question.question_text }}</a>
+                <br/>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>
+        No polls are avilable.
+    </p>
+{% endif %}
+    
+
